@@ -1,33 +1,70 @@
 :root {
-  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-  --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-  --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --font-size-xl2: clamp(1.5rem, -1.644rem + 7.74vw, 3rem);
+  --font-size-xl: clamp(1.125rem, 0.473rem + 1.604vw, 1.5rem);
+  --font-size-lg: 1.125rem;
+  --font-size-base: clamp(0.875rem, 0.6597rem + 0.53vw, 1rem);
+  --font-size-s: clamp(0.75rem, 0.535rem + 0.53vw, 0.875rem);
+  --font-size-xs: clamp(0.625rem, 0.19rem + 1.07vw, 0.875rem);
+  --font-size-xs2: clamp(0.5rem, 0.285rem + 0.53vw, 0.625rem);
 
-  --color-text: hsl(12, 5%, 4%);
-  --color-bg: hsl(10, 21%, 95%);
-  --color-border: hsl(17, 24%, 90%);
+  --color-background: #ffffff;
+  --color-text-primary: #000000;
+  --color-text-secondary: #4f4f4f;
 }
 
-html {
-  font-family: system-ui, sans-serif;
-  font-size: var(--font-size-base);
-  color: var(--color-text);
-  background-color: var(--color-bg);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
-  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text-primary);
 }
 
-:global(h1) {
+body,
+input,
+textarea,
+select,
+button {
+  font-family: 'Monteserrat', sans-serif;
+  font-size: var(--font-size-base);
+  font-weight: 400;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 700;
+  font-size: var(--font-size-xl2);
+}
+
+h2 {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 700;
   font-size: var(--font-size-xl);
 }
 
-:global(h2) {
+h3 {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 400;
   font-size: var(--font-size-lg);
-}
-
-:global(code) {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-style: italic;
 }
