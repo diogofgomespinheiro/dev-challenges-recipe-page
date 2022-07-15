@@ -1,0 +1,70 @@
+---
+import MainHead from '../components/MainHead.astro';
+import PostHeader from '../components/PostHeader.astro';
+
+export type Banner = {
+  src: string;
+  alt: string;
+};
+
+export type RecipeInfo = {
+  yields: string;
+  preparationTime: string;
+  cookTime: string;
+  totalTime: string;
+};
+
+export type Content = {
+  title: string;
+  description: string;
+  banner: Banner;
+  recipeInfo: RecipeInfo;
+  permalink: string | URL;
+};
+
+export interface Props {
+  content: Content;
+}
+
+const { content } = Astro.props as Props;
+const canonicalURL = Astro.canonicalURL;
+---
+
+<!DOCTYPE html>
+<html lang='en'>
+  <MainHead
+    title={content.title}
+    description={content.description}
+    canonicalURL={canonicalURL}
+    permalink={content.permalink}
+    banner={content.banner.src}
+  />
+  <body>
+    <article class='article-container'>
+      <PostHeader
+        banner={content.banner}
+        title={content.title}
+        description={content.description}
+      />
+      <main>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <slot></slot>
+        </div>
+      </main>
+    </article>
+    <footer></footer>
+    <style>
+      .article-container {
+        flex: 1;
+        width: 100%;
+        max-width: 970px;
+        margin: 0 auto;
+        padding: 2rem 0.75rem;
+      }
+    </style>
+  </body>
+</html>

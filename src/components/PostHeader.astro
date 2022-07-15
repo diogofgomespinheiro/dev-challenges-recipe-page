@@ -1,0 +1,29 @@
+---
+export type Banner = {
+  src: string;
+  alt: string;
+};
+
+export interface Props {
+  title: string;
+  description: string;
+  banner: Banner;
+}
+
+const { title, description, banner } = Astro.props as Props;
+---
+
+<header>
+  <div>
+    <h1 class='post-title'>{title}</h1>
+    <p class='post-description'>{description}</p>
+  </div>
+  <img src={banner.src} alt={banner.alt} class='post-image' />
+</header>
+<style>
+  .post-description {
+    font-size: var(--font-size-s);
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+</style>
