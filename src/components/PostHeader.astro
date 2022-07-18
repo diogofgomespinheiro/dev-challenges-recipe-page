@@ -15,15 +15,59 @@ const { title, description, banner } = Astro.props as Props;
 
 <header>
   <div>
-    <h1 class='post-title'>{title}</h1>
-    <p class='post-description'>{description}</p>
+    <h1 class='title'>{title}</h1>
+    <div class='description-container'>
+      <img src='/assets/drag_indicator.svg' alt='Six dots' />
+      <p class='description'>{description}</p>
+    </div>
   </div>
-  <img src={banner.src} alt={banner.alt} class='post-image' />
+  <div class='banner-container'>
+    <img src={banner.src} alt={banner.alt} class='banner' />
+  </div>
 </header>
 <style>
-  .post-description {
+  .description-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 1rem 0 2.5rem 0;
+  }
+
+  .description-container > img {
+    transform: rotate(90deg);
+    height: 1rem;
+  }
+  .description {
+    margin-left: 0.75rem;
+    max-width: 37.5rem;
+
     font-size: var(--font-size-s);
+    font-weight: 500;
     font-style: italic;
     color: var(--color-text-secondary);
+  }
+
+  .banner-container {
+    position: relative;
+    width: 100%;
+    padding-top: calc((9 / 16) * 100%);
+    border-radius: 12px;
+  }
+
+  .banner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .description-container {
+      margin: 1rem 0 1.25rem 0;
+    }
   }
 </style>
