@@ -1,0 +1,54 @@
+---
+export interface Icon {
+  src: string;
+  alt: string;
+}
+
+export interface Props {
+  icon: Icon;
+  title: string;
+  description: string;
+  highlighted?: boolean;
+}
+
+const { icon, title, description, highlighted } = Astro.props as Props;
+---
+
+<div class='container'>
+  <img class='icon' src={icon.src} alt={icon.alt} />
+  <div class='content'>
+    <div class='title'>{title}</div>
+    <div class:list={['description', { highlighted }]}>{description}</div>
+  </div>
+</div>
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .icon {
+    height: 25px;
+  }
+
+  .content {
+    margin-left: 0.875rem;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-size: var(--font-size-xs2);
+    font-weight: 700;
+    color: #bdbdbd;
+  }
+
+  .description {
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+  }
+
+  .description.highlighted {
+    color: var(--color-accent);
+  }
+</style>
