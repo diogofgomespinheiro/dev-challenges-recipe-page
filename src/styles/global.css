@@ -8,6 +8,7 @@
   --font-size-xs2: clamp(0.5rem, 0.285rem + 0.53vw, 0.625rem);
 
   --color-background: #ffffff;
+  --color-accent: #f2994a;
   --color-text-primary: #000000;
   --color-text-secondary: #4f4f4f;
 }

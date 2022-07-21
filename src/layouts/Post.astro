@@ -1,6 +1,7 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import PostHeader from '../components/PostHeader.astro';
+import RecipeInfo from '../components/RecipeInfo.astro';
 
 export type Banner = {
   src: string;
@@ -46,14 +47,11 @@ const canonicalURL = Astro.canonicalURL;
         title={content.title}
         description={content.description}
       />
-      <main>
-        <div>
-          <div></div>
-          <div></div>
-        </div>
-        <div>
+      <main class='main-container'>
+        <div class='recipe-container'>
           <slot></slot>
         </div>
+        <RecipeInfo {...content.recipeInfo} />
       </main>
     </article>
     <footer></footer>
@@ -63,7 +61,65 @@ const canonicalURL = Astro.canonicalURL;
         width: 100%;
         max-width: 970px;
         margin: 0 auto;
-        padding: 2rem 0.75rem;
+        padding: 2rem;
+      }
+
+      .main-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+      }
+
+      .recipe-container {
+        flex: 0.6;
+      }
+
+      .recipe-container > :global(h2):not(:first-child) {
+        margin-top: 1.75rem;
+      }
+
+      .recipe-container > :global(h2),
+      .recipe-container > :global(h3) {
+        margin-bottom: 1.75rem;
+      }
+
+      .recipe-container > :global(ol) {
+        list-style: none;
+      }
+      .recipe-container > :global(ol) :global(li) {
+        position: relative;
+        margin-left: 3rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.5rem;
+      }
+      .recipe-container > :global(ol) :global(li):first-child {
+        counter-reset: index;
+      }
+      .recipe-container > :global(ol) :global(li)::before {
+        position: absolute;
+        top: 0;
+        left: -3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        width: 32px;
+        border-radius: 0.375rem;
+
+        background-color: var(--color-accent);
+        color: #fff;
+        content: counter(index, decimal);
+        counter-increment: index;
+      }
+
+      @media screen and (max-width: 767px) {
+        .article-container {
+          padding: 2rem 0.75rem;
+        }
+        .main-container {
+          flex-direction: column-reverse;
+        }
       }
     </style>
   </body>

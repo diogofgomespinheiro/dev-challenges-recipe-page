@@ -1,0 +1,69 @@
+---
+import RecipeInfoItem from './RecipeInfoItem.astro';
+
+export interface Props {
+  yields: string;
+  preparationTime: string;
+  cookTime: string;
+  totalTime: string;
+}
+
+const { yields, preparationTime, cookTime, totalTime } = Astro.props as Props;
+---
+
+<div class='container'>
+  <RecipeInfoItem
+    title='Yields'
+    description={yields}
+    icon={{ src: '/assets/restaurant_menu.svg', alt: 'Spoon and Knife Icon' }}
+    highlighted
+  />
+  <RecipeInfoItem
+    title='Prep Time'
+    description={preparationTime}
+    icon={{ src: '/assets/clock.svg', alt: 'Clock Icon' }}
+  />
+  <RecipeInfoItem
+    title='Cook Time'
+    description={cookTime}
+    icon={{ src: '/assets/clock.svg', alt: 'Clock Icon' }}
+  />
+  <RecipeInfoItem
+    title='Total Time'
+    description={totalTime}
+    icon={{ src: '/assets/clock.svg', alt: 'Clock Icon' }}
+  />
+</div>
+<style>
+  .container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    position: sticky;
+    top: 3rem;
+    height: 370px;
+    width: 220px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    padding: 60px 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .container {
+      position: initial;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 0;
+      margin-bottom: 30px;
+      height: auto;
+      width: 100%;
+
+      box-shadow: none;
+    }
+
+    .container > :global(*):first-child {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

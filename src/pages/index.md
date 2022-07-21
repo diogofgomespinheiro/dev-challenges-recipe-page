@@ -7,6 +7,13 @@ banner:
     src: 'https://images.unsplash.com/photo-1524351199678-941a58a3df50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80',
     alt: 'Cheesecake with black plate'
   }
+recipeInfo:
+  {
+    yields: '12 servings',
+    preparationTime: '45 minutes',
+    cookTime: '1 hour',
+    totalTime: '1 hour and 45'
+  }
 ---
 
 ## Ingredients
