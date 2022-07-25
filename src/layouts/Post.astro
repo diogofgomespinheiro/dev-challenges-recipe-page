@@ -2,6 +2,7 @@
 import MainHead from '../components/MainHead.astro';
 import PostHeader from '../components/PostHeader.astro';
 import RecipeInfo from '../components/RecipeInfo.astro';
+import Footer from '../components/Footer.astro';
 
 export type Banner = {
   src: string;
@@ -54,7 +55,7 @@ const canonicalURL = Astro.canonicalURL;
         <RecipeInfo {...content.recipeInfo} />
       </main>
     </article>
-    <footer></footer>
+    <Footer />
     <style>
       .article-container {
         flex: 1;
