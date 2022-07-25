@@ -33,7 +33,7 @@
 
 ## Overview
 
-![screenshot](https://raw.githubusercontent.com/diogofgomespinheiro/dev-challenges-interior-consultant/main/demo-screenshot.png)
+![screenshot](https://raw.githubusercontent.com/diogofgomespinheiro/dev-challenges-recipe-page/main/challenge_img.png)
 
 ## Built With
 
@@ -43,7 +43,7 @@
 
 ## Features
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/OEKdUZ6xs0h99C38XVht) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io) challenge. The [challenge](https://devchallenges.io/challenges/OEKdUZ6xs0h99C38XVht) was to build an application to complete the given user stories.
 
 ## Contact
 
