@@ -1,5 +1,7 @@
 ---
 layout: ../layouts/Post.astro
+setup: |
+  import Checkbox from '../components/Checkbox.astro'
 title: Classic Cheesecake Recipe
 description: Look no further for a creamy and ultra smooth classic cheesecake recipe! Paired with a buttery graham cracker crust, no one can deny its simple decadence. For the best results, bake in a water bath.
 banner:
@@ -20,7 +22,47 @@ recipeInfo:
 
 ### Graham Cracker Crust
 
+<Checkbox>
+  1 and 1/2 cups (150g) **graham cracker crumbs** (about 10 full sheet graham crackers)
+</Checkbox>
+
+<Checkbox>
+  5 Tablespoons (70g) unsalted butter, melted
+</Checkbox>
+
+<Checkbox>
+  1/4 cup (50g) granulated sugar
+</Checkbox>
+
 ### Cheesecake
+
+<Checkbox>
+  four 8-ounce blocks (904g) full-fat **cream cheese**, softened to room temperature
+</Checkbox>
+
+<Checkbox>
+  1 cup (200g) **granulated sugar**
+</Checkbox>
+
+<Checkbox>
+  1 cup (240g) full-fat **sour cream**, at room temperature
+</Checkbox>
+
+<Checkbox>
+  1 teaspoon **pure vanilla extract**
+</Checkbox>
+
+<Checkbox>
+  2 teaspoons **fresh lemon juice** (optional, but recommended)
+</Checkbox>
+
+<Checkbox>
+  3 large **eggs**, at room temperature
+</Checkbox>
+
+<Checkbox>
+  topping suggestions: salted caramel, lemon curd, strawberry topping, chocolate ganache, red wine chocolate ganache, fresh fruit, whipped cream, or raspberry sauce (recipe in notes) 
+</Checkbox>
 
 ## Instructions
 
